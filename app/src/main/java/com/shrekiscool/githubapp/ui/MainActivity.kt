@@ -1,7 +1,8 @@
-package com.shrekiscool.githubapp
+package com.shrekiscool.githubapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.shrekiscool.githubapp.R
 
 class MainActivity : AppCompatActivity() {
 
