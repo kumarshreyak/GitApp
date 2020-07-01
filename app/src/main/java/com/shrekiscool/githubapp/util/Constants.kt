@@ -7,4 +7,5 @@ import io.reactivex.disposables.Disposable
 import okhttp3.ResponseBody
 import retrofit2.Response
 
-val BASE_URL = "https://ghapi.huchen.dev"
+const val BASE_URL = "https://ghapi.huchen.dev"
+const val GET_REPOSITORY = "repositories"
