@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shrekiscool.githubapp.R
 import com.shrekiscool.githubapp.databinding.ItemRepoBinding
 import com.shrekiscool.githubapp.network.response.GetRepositoryResponse
+import com.squareup.picasso.Picasso
 
 class RepoListAdapter(private val context: Context, private val data: GetRepositoryResponse) :
     RecyclerView.Adapter<RepoViewHolder>() {
@@ -24,6 +25,7 @@ class RepoListAdapter(private val context: Context, private val data: GetReposit
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
         holder.binding.tvUser.text = data[position].author
         holder.binding.tvRepo.text = data[position].name
+        Picasso.get().load(data[position].avatar).into(holder.binding.ivUser)
     }
 
 }

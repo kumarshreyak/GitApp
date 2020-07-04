@@ -8,6 +8,7 @@
         <ImageView
             android:id="@+id/iv_user"
             tools:background="@color/black"
+            android:scaleType="fitCenter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
