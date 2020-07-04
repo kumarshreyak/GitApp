@@ -3,6 +3,8 @@ package com.shrekiscool.githubapp.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -32,7 +34,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         mainViewModel.getRepositories().observe(this) {
-            binding.networkTest.text = it[0].description
+            if(it.isNotEmpty()) {
+
+                binding.rvRepoList.adapter = RepoListAdapter(this, it)
+            } else {
+                binding.rvRepoList.visibility = GONE
+                binding.tvFailure.visibility = VISIBLE
+            }
         }
     }
 }

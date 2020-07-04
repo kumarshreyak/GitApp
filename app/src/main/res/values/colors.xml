@@ -3,4 +3,16 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="color_text_dark_high">#DE000000</color>
+    <color name="color_text_dark_medium">#99000000</color>
+    <color name="color_text_dark_low">#61000000</color>
+
+    <color name="color_text_light_high">#DEffffff</color>
+    <color name="color_text_light_medium">#99ffffff</color>
+    <color name="color_text_light_low">#61ffffff</color>
+
 </resources>
