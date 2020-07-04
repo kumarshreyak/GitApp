@@ -22,7 +22,8 @@
                     android:id="@+id/tv_toolbar_title"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
-                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textStyle="bold"
                     android:text="Trending"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -36,6 +37,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
             android:layout_height="0dp"/>
 

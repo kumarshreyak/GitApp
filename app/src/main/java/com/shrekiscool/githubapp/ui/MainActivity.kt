@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         mainViewModel.getRepositories().observe(this) {
             if(it.isNotEmpty()) {
-
                 binding.rvRepoList.adapter = RepoListAdapter(this, it)
             } else {
                 binding.rvRepoList.visibility = GONE

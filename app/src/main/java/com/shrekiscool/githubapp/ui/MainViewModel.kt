@@ -11,9 +11,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody
 import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainViewModel : BaseViewModel() {
     private var getRepositoryResponse: MutableLiveData<GetRepositoryResponse> = MutableLiveData()
+    var stateList: ArrayList<State>? = null
     var errorMessage: String? = null
 
     init {
@@ -28,6 +31,11 @@ class MainViewModel : BaseViewModel() {
         val url = response.raw().request().url().toString()
         if(url.endsWith(GET_REPOSITORY)) {
             getRepositoryResponse.value = gson.fromJson(response.body()!!.string(), GetRepositoryResponse::class.java)
+//            stateList = ArrayList<State>().also { sList ->
+//                repeat(getRepositories().value!!.size) {
+//                    sList.add(State.CLOSED)
+//                }
+//            }
         }
     }
 
@@ -39,4 +47,9 @@ class MainViewModel : BaseViewModel() {
         return getRepositoryResponse
     }
 
+}
+
+enum class State {
+    CLOSED,
+    EXPANDED
 }

@@ -1,7 +1,10 @@
 package com.shrekiscool.githubapp.ui
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +29,23 @@ class RepoListAdapter(private val context: Context, private val data: GetReposit
         holder.binding.tvUser.text = data[position].author
         holder.binding.tvRepo.text = data[position].name
         Picasso.get().load(data[position].avatar).into(holder.binding.ivUser)
+
+        // Expanded
+        holder.binding.tvLang.text = data[position].language
+        if(!data[position].languageColor.isNullOrEmpty())
+            holder.binding.ivLang.setBackgroundColor(Color.parseColor(data[position].languageColor))
+        holder.binding.tvFork.text = data[position].forks.toString()
+        holder.binding.tvStars.text = data[position].stars.toString()
+        holder.binding.expandedGroup.visibility = GONE
+
+        // On click
+        holder.binding.root.setOnClickListener {
+            if(holder.binding.expandedGroup.visibility.equals(VISIBLE)) {
+                holder.binding.expandedGroup.visibility = GONE
+            } else {
+                holder.binding.expandedGroup.visibility = VISIBLE
+            }
+        }
     }
 
 }

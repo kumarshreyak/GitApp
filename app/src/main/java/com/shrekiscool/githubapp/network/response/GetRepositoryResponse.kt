@@ -1,7 +1,5 @@
 package com.shrekiscool.githubapp.network.response
 
-import GetRepositoryResponseItem
-
 class GetRepositoryResponse: ArrayList<GetRepositoryResponseItem>()
 
 data class GetRepositoryResponseItem (
