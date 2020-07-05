@@ -31,11 +31,11 @@ class MainViewModel : BaseViewModel() {
         val url = response.raw().request().url().toString()
         if(url.endsWith(GET_REPOSITORY)) {
             getRepositoryResponse.value = gson.fromJson(response.body()!!.string(), GetRepositoryResponse::class.java)
-//            stateList = ArrayList<State>().also { sList ->
-//                repeat(getRepositories().value!!.size) {
-//                    sList.add(State.CLOSED)
-//                }
-//            }
+            stateList = ArrayList<State>().also { sList ->
+                repeat(getRepositories().value!!.size) {
+                    sList.add(State.CLOSED)
+                }
+            }
         }
     }
 
