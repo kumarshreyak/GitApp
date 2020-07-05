@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso
 class RepoListAdapter(private val context: Context, private val mainViewModel: MainViewModel) :
     RecyclerView.Adapter<RepoViewHolder>() {
 
-    val data = mainViewModel.getRepositories().value!!
+    val data = mainViewModel.getRepositoryResponse.value!!
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         val binding = DataBindingUtil.inflate<ItemRepoBinding>(LayoutInflater.from(context),
@@ -40,7 +40,8 @@ class RepoListAdapter(private val context: Context, private val mainViewModel: M
         holder.binding.tvFork.text = data[position].forks.toString()
         holder.binding.tvStars.text = data[position].stars.toString()
 
-        if(mainViewModel.stateList!![position].equals(State.CLOSED)) {
+
+        if(mainViewModel.stateList.value!![position].equals(State.CLOSED)) {
             holder.binding.expandedGroup.visibility = GONE
         } else {
             holder.binding.expandedGroup.visibility = VISIBLE
@@ -48,12 +49,12 @@ class RepoListAdapter(private val context: Context, private val mainViewModel: M
 
         // On click
         holder.binding.root.setOnClickListener {
-            if(mainViewModel.stateList!![position].equals(State.CLOSED)) {
+            if(mainViewModel.stateList.value!![position].equals(State.CLOSED)) {
                 holder.binding.expandedGroup.visibility = VISIBLE
-                mainViewModel.stateList!![position] = State.EXPANDED
+                mainViewModel.stateList.value!![position] = State.EXPANDED
             } else {
                 holder.binding.expandedGroup.visibility = GONE
-                mainViewModel.stateList!![position] = State.CLOSED
+                mainViewModel.stateList.value!![position] = State.CLOSED
             }
         }
         holder.setIsRecyclable(false)

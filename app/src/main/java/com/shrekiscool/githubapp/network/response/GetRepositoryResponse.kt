@@ -1,6 +1,8 @@
 package com.shrekiscool.githubapp.network.response
 
-class GetRepositoryResponse: ArrayList<GetRepositoryResponseItem>()
+class GetRepositoryResponse: ArrayList<GetRepositoryResponseItem>() {
+    var errorMessage: String? = null
+}
 
 data class GetRepositoryResponseItem (
     val author: String,

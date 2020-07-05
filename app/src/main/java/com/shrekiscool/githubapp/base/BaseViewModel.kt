@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable
 import okhttp3.ResponseBody
 import retrofit2.Response
 
-abstract class BaseViewModel : ViewModel() {
+abstract class BaseRepository {
     val gson = Gson()
 
     abstract fun onSuccess(response: Response<ResponseBody>)

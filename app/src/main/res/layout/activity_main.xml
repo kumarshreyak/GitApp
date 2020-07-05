@@ -30,6 +30,17 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
+        <ImageView
+            android:id="@+id/iv_error"
+            android:visibility="gone"
+            android:src="@drawable/nointernet_connection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_repo_list"
             tools:listitem="@layout/item_repo"
