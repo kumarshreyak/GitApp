@@ -9,3 +9,5 @@ import retrofit2.Response
 
 const val BASE_URL = "https://ghapi.huchen.dev"
 const val GET_REPOSITORY = "repositories"
+const val SHARED_PREFERENCES_PASSWORD = "something"
+const val SHARED_PREFERENCES_FILE_NAME = "sharedPrefFile"
