@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.inflateMenu(R.menu.main_menu)
         // Observer data
         mainViewModel.getRepositoryResponse.observe(this) {
-            if(it.isNotEmpty() && !it.errorMessage.equals("error")) {
+            if(it.isNotEmpty()) {
                 binding.rvRepoList.adapter = RepoListAdapter(this, mainViewModel)
                 binding.rvRepoList.visibility = VISIBLE
                 binding.ivError.visibility = GONE
-            } else {
+            } else if(it.errorMessage.equals("error")) {
                 binding.rvRepoList.visibility = GONE
                 binding.ivError.visibility = VISIBLE
             }
