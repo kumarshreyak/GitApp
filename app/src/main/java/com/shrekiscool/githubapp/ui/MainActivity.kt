@@ -25,8 +25,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        // Show options menu
+        binding.toolbar.inflateMenu(R.menu.main_menu)
+        // Observer data
         mainViewModel.getRepositoryResponse.observe(this) {
-            if(it.isNotEmpty()) {
+            if(it.isNotEmpty() && !it.errorMessage.equals("error")) {
                 binding.rvRepoList.adapter = RepoListAdapter(this, mainViewModel)
                 binding.rvRepoList.visibility = VISIBLE
                 binding.ivError.visibility = GONE

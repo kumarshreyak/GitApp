@@ -11,10 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_user"
-            android:scaleType="fitCenter"
-            android:background="@color/color_text_light_high"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,9 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_lang"
-            android:background="@color/color_text_dark_medium"
+            android:src="@color/color_text_dark_medium"
             app:layout_constraintTop_toBottomOf="@id/tv_description"
             app:layout_constraintStart_toStartOf="@id/tv_description"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +104,7 @@
 
         <ImageView
             android:id="@+id/iv_fork"
-            android:background="@color/color_text_dark_medium"
+            android:src="@drawable/ic_share_black"
             app:layout_constraintTop_toTopOf="@id/iv_lang"
             app:layout_constraintStart_toEndOf="@id/tv_stars"
             app:layout_constraintBottom_toBottomOf="@id/iv_lang"
@@ -134,7 +132,7 @@
             android:layout_height="wrap_content"/>
 
         <View
-            android:background="@color/color_text_dark_low"
+            android:background="@color/color_divider"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"

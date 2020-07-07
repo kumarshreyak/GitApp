@@ -68,5 +68,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     // SecurePreferences
     implementation 'com.scottyab:secure-preferences-lib:0.1.4'
+    // Circle imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }

@@ -36,7 +36,7 @@ class RepoListAdapter(private val context: Context, private val mainViewModel: M
         // Expanded
         holder.binding.tvLang.text = data[position].language
         if(!data[position].languageColor.isNullOrEmpty())
-            holder.binding.ivLang.setBackgroundColor(Color.parseColor(data[position].languageColor))
+            holder.binding.ivLang.setColorFilter(Color.parseColor(data[position].languageColor))
         holder.binding.tvFork.text = data[position].forks.toString()
         holder.binding.tvStars.text = data[position].stars.toString()
 

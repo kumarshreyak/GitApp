@@ -30,6 +30,9 @@ object MainRepository {
 
                 override fun onError(e: Throwable) {
                     Log.d("onError", e.message.toString())
+                    val errorData = GetRepositoryResponse()
+                    errorData.errorMessage = "error"
+                    data.value = errorData
                 }
 
                 override fun onComplete() {
@@ -45,7 +48,7 @@ object MainRepository {
                     } else {
                         // Failure
                         val errorData = GetRepositoryResponse()
-                        errorData.errorMessage = response.message()
+                        errorData.errorMessage = "error"
                         data.value = errorData
                     }
                 }
