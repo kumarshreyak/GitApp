@@ -17,9 +17,9 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 object MainRepository {
+    val data: MutableLiveData<GetRepositoryResponse> = MutableLiveData()
 
     fun getRepositories() : MutableLiveData<GetRepositoryResponse> {
-        val data: MutableLiveData<GetRepositoryResponse> = MutableLiveData()
         apiInterface.getRepositories()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

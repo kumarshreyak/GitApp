@@ -27,15 +27,20 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         // Show options menu
         binding.toolbar.inflateMenu(R.menu.main_menu)
+        // Setup error group
+        binding.errorGroup.visibility = GONE
+        binding.btnRetry.setOnClickListener {
+            MainRepository.getRepositories()
+        }
         // Observer data
         mainViewModel.getRepositoryResponse.observe(this) {
             if(it.isNotEmpty()) {
                 binding.rvRepoList.adapter = RepoListAdapter(this, mainViewModel)
                 binding.rvRepoList.visibility = VISIBLE
-                binding.ivError.visibility = GONE
+                binding.errorGroup.visibility = GONE
             } else if(it.errorMessage.equals("error")) {
                 binding.rvRepoList.visibility = GONE
-                binding.ivError.visibility = VISIBLE
+                binding.errorGroup.visibility = VISIBLE
             }
         }
     }

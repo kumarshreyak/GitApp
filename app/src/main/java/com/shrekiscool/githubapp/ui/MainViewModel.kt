@@ -8,7 +8,7 @@ import com.shrekiscool.githubapp.network.response.GetRepositoryResponse
 import kotlin.collections.ArrayList
 
 class MainViewModel() : ViewModel() {
-    val getRepositoryResponse: MutableLiveData<GetRepositoryResponse> = MainRepository.getRepositories()
+    var getRepositoryResponse: MutableLiveData<GetRepositoryResponse> = MainRepository.getRepositories()
     var stateList: MutableLiveData<ArrayList<State>> = MutableLiveData()
 
     init {
